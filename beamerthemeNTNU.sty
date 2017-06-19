@@ -1,0 +1,108 @@
+\ProvidesPackage{beamerthemeNTNU}
+
+% blue
+\definecolor{ntnublue}{RGB}{1,80,159} % #00509e
+
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{headline}{fg=white, bg=white}
+\setbeamercolor{footline}{fg=white, bg=white}
+\setbeamerfont{footline}{size=\large, series=\tt}
+\setbeamercolor{separation line}{bg=white}
+\setbeamercolor{title in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+
+
+\setbeamercolor{framesubtitle}{fg=white, bg=white}
+\setbeamercolor{author in head/foot}{fg=black, bg=white}
+\setbeamercolor{title in head/foot}{fg=black, bg=white}
+
+\setbeamercolor*{normal text}{fg=black, bg=white}
+\setbeamercolor*{block body}{fg=black, bg=white}
+\setbeamercolor*{block title}{fg=white, bg=ntnublue}
+\setbeamerfont{block title}{size=\large, series=\bf}
+\setbeamercolor{upper separation line head}{fg=white}
+
+\setbeamercolor*{example body}{fg=white, bg=white}
+\setbeamercolor*{example text}{fg=white, bg=white}
+\setbeamercolor*{example title}{fg=white, bg=white}
+
+\setbeamercolor{structure}{fg=black}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{block begin}{
+  \vskip1ex
+  \begin{beamercolorbox}[ht=3.5ex,dp=.6ex,center,colsep*=.08ex]{block title}%
+    \usebeamerfont*{block title}%
+    {\phantom{Gg}\vfill\Large\insertblocktitle\vfill}% phantom because of baseline problem
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,sep=0.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+\setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{logos}
+    \begin{columns}[T]
+      %\begin{column}{.02\paperwidth}\end{column}
+      \begin{column}{.9\paperwidth}
+        \vskip5cm
+        \begin{center}
+          \usebeamercolor{title in headline}{
+            \color{fg}\textbf{\Huge{\inserttitle}}\\[1ex]
+          }
+        \end{center}
+      \end{column}
+      %\begin{column}{.02\paperwidth}\end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      %\begin{column}{.02\paperwidth}\end{column}
+      \begin{column}{.7\paperwidth}
+        \vskip3cm
+        \begin{center}
+          \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1cm]}
+          \usebeamercolor{institute in headline}{\color{fg}\normalsize{\insertinstitute}}
+        \end{center}
+      \end{column}
+      %\begin{column}{.02\paperwidth}\end{column}
+    \end{columns}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[rectangle, anchor=south west, minimum width=33.1in, minimum height=8.1cm, fill=ntnublue] (RB) {};
+      \node[anchor=south east] at ([shift={(80.2cm,1.5cm)}]RB.south west) {\includegraphics[scale=1.8]{resources/images/logo_ntnu_eng_neg.eps}};
+      \draw[dash pattern=on 0.64cm off 0.43cm, line width=0.2cm] (0cm,8.015cm) -- (33.1in,8.015cm);
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+%  \leavevmode%
+%  \begin{beamercolorbox}[ht=4ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+%    \texttt{\leftfoot}
+%    \hfill
+%    \texttt{\rightfoot}
+%    \vskip1ex
+%  \end{beamercolorbox}
+%  \vskip0pt%
+%  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%    \rule{0pt}{3pt}
+%  \end{beamercolorbox}
